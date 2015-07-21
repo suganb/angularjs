@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>Angular: Service example</title>
+	<script src="http://code.angularjs.org/angular-1.0.1.js"></script>
+</head>
+<body>
+	<div ng-app="app" ng-controller="servicecontroller">
+		<p>inject:{{BASIC}}<p>
+	</div>
+	<script> 
+	  var app = angular.module('app',[]);
+    app.service('newservice',function()
+    {
+        var obj ={"BASIC":5000,"PLUS":9000,"PROPLUS":12000};
+    
+        this.data=function()
+        {
+            return obj;
+        }
+            
+    });
+    app.controller('servicecontroller', function($scope,newservice)
+        {
+
+            var obj =newservice.data();
+            {
+            $scope.BASIC=obj.BASIC;
+            }
+        }   
+);
+	</script>
+</body>
+</html>
