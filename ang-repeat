@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<body>
+
+<div ng-app="" ng-init="names=[
+{options:'galleries',values:'5'},
+{options:'images',values:'7'},
+{options:'videos',values:'8'}]">
+
+<p><h3><b>Details of Manage site:</h3></b></p>
+<ul>
+  <li ng-repeat="x in names">
+  {{ x.options + ' contains  ' + x.values  }}</li>
+</ul>
+
+</div>
+
+</body>
+</html>
+
