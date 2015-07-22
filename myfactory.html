@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title>Angular: Factory example</title>
+	<script src="http://code.angularjs.org/angular-1.0.1.js"></script>
+</head>
+</body>
+<div ng-app="Myapp" ng-controller="factorycontroller">
+<p>inject:{{memory}}</p>
+</div>
+<script>
+var Myapp=angular.module('Myapp',[]);
+Myapp.factory('myfactory',function(){
+	return{
+		GB:function(){
+
+			return 10;
+		}
+		
+	}
+	});
+Myapp.controller('factorycontroller',function($scope,myfactory){
+	$scope.memory=myfactory.GB();
+
+});
+
+</script>
+</body>
+</html>
