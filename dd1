@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="app"ng-controller="ddctrl">
+<ng-repeat="item.option in options track by $id(item)">
+      <p>Manage site option is : {{selectedItem.option}}</p>
+      <select ng-model="selectedItem" ng-options="item.option for item in options">
+      </select>
+    </div>
+<script>
+var app = angular.module('app',[]);
+app.controller('ddctrl',function($scope){
+  $scope.options = [{option: 'galleries', val: '30' },{ option: 'images', val: '27' },{ option: 'videos', val: '50' }];
+$scope.selectedItem=$scope.options[0];
+});
+</script>
+  </body>
+</html>
+
+
